@@ -39,8 +39,8 @@ class AlterOrdersTableSupportedCourierService extends AbstractMigration
               ->addColumn('shipping_address_district_id', 'integer', ['after' => 'shipping_address_district'])
               ->addColumn('shipping_address_city_id', 'integer', ['after' => 'shipping_address_city'])
               ->addColumn('shipping_address_province_id', 'integer', ['after' => 'shipping_address_province'])
-              ->addColumn('courier_service', 'string', ['limit' => 50])
-              ->addColumn('total_weight', 'decimal')
+              ->addColumn('courier_service', 'string', ['limit' => 50, 'after' => 'courier'])
+              ->addColumn('total_weight', 'decimal', ['after' => 'courier_service'])
               ->update();
     }
 }
