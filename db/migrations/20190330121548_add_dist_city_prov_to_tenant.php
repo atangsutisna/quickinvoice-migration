@@ -32,6 +32,10 @@ class AddDistCityProvToTenant extends AbstractMigration
      */
     public function change()
     {
-
+        $table = $this->table('tenant');
+        $table->addColumn('address_district_id', 'integer', ['after' => 'address_street'])
+              ->addColumn('address_city_id', 'integer', ['after' => 'address_district'])
+              ->addColumn('address_province_id', 'integer', ['after' => 'address_city'])
+              ->update();
     }
 }
