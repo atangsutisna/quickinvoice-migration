@@ -37,7 +37,8 @@ class CreateTableTenantEmailTemplate extends AbstractMigration
             'primary_key' => ['tenant_id', 'template_id'],
         ]);
         
-        $table->addColumn('city_id', 'integer')
-              ->addColumn('province_id', 'integer');
+        $table->addColumn('tenant_id', 'integer')
+              ->addColumn('template_id', 'integer')
+              ->create();
     }
 }

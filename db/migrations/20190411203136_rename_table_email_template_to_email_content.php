@@ -11,7 +11,8 @@ class RenameTableEmailTemplateToEmailContent extends AbstractMigration
     public function up()
     {
         $table = $this->table('email_template');
-        $table->renameTable('email_content');
+        $table->rename('email_content')
+              ->save();
     }
 
     /**
@@ -20,6 +21,6 @@ class RenameTableEmailTemplateToEmailContent extends AbstractMigration
     public function down()
     {
         $table = $this->table('email_content');
-        $table->renameTable('email_template');
+        $table->rename('email_template');
     }
 }

@@ -33,7 +33,8 @@ class AlterCityTable extends AbstractMigration
     public function up()
     {
         $table = $this->table('cities');
-        $table->renameColumn('modification_time', 'creation_time');
+        $table->renameColumn('modification_time', 'creation_time')
+              ->save();
     }
 
     public function down()

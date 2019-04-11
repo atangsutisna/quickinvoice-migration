@@ -34,7 +34,8 @@ class AlterProvinceTable extends AbstractMigration
     {
         $table = $this->table('provinces');
         $table->renameColumn('id', 'province_id')
-              ->renameColumn('modification_time', 'creation_time');
+              ->renameColumn('modification_time', 'creation_time')
+              ->save();
     }
 
     public function down()
