@@ -11,7 +11,7 @@ class AddFormTypeToTableOrders extends AbstractMigration
     public function up()
     {
         $table = $this->table('orders');
-        $table->addColumn('form_type', 'enum', ['values' => ['simple', 'advance'], 'default' => 'simple'])
+        $table->addColumn('form_type', 'enum', ['values' => ['simple', 'advance'], 'default' => 'simple', 'after' => 'tenant_id'])
               ->save();
     }
 }
