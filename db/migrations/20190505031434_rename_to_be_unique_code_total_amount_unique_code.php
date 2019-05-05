@@ -11,7 +11,7 @@ class RenameToBeUniqueCodeTotalAmountUniqueCode extends AbstractMigration
      */
     public function up()
     {
-        $table = $this->table('email_template');
+        $table = $this->table('orders');
         $table->renameColumn('unique_total_amount', 'unique_code')
               ->save();
     }
