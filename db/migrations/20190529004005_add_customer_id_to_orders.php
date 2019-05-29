@@ -10,7 +10,7 @@ class AddCustomerIdToOrders extends AbstractMigration
      */
     public function up()
     {
-        $table = $this->table('customer');
+        $table = $this->table('orders');
         $table->addColumn('customer_id', 'integer', ['after' => 'form_type'])
               ->update();
     }
